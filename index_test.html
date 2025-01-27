@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Millennial Apps</title>
+  <!-- Enlace a las fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Enlace al archivo CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	
+    <nav>
+        <a href="index_test.html">Inicio</a>
+        <a href="#aplicaciones">Aplicaciones</a>
+        <a href="portafolio.html">Portafolio</a>
+    </nav>
+
+  <div class="content">
+    <h1>Device Cat v1.0</h1>
+    <h2>Tu gestor simplificado para visualizar información detallada de tu dispositivo y aplicaciones, incluyendo batería, almacenamiento y red.</h2>
+<div class="buttons">
+  <button class="button-1" onclick="location.href='https://www.google.com';">Descargar</button>
+  <button class="button-2" onclick="document.getElementById('novedades').scrollIntoView({ behavior: 'smooth', block: 'center' });">
+    Novedades
+  </button>
+</div>
+  </div>
+
+  <!-- Carrusel de imágenes -->
+  <div class="slider">
+    <div class="slide">
+      <img src="assets/icons/image1.jpg" alt="Imagen 1">
+    </div>
+    <div class="slide">
+      <img src="assets/icons/image2.jpg" alt="Imagen 2">
+    </div>
+    <div class="slide">
+      <img src="assets/icons/image3.jpg" alt="Imagen 3">
+    </div>
+    
+    <!-- Controles de navegación -->
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+<div id="novedades" style="background-color: #1B1A1F; border-radius: 30px; padding: 20px; margin: 20px;">
+    <h2>Novedades v1.0 (25.01.25)</h2>
+    <p style="color: #9E9E9E;">• Novedad 1<br>• Novedad 2<br>• Novedad 3</p>
+</div>
+
+    <div class="image-container">
+        <img src="assets/icons/whatsapp-logo.png" alt="Imagen 1">
+        <img src="assets/icons/telegram-logo.png" alt="Imagen 2">
+        <img src="assets/icons/instagram-logo.png" alt="Imagen 3">
+    </div>
+
+  <!-- Nuevo div con el texto centrado -->
+  <div style="background-color: #1B1A1F; padding: 5px; text-align: center;">
+    <p style="color: #fff;">Creado por <span style="color: #673AB7;">Millennials Apps</span></p>
+  </div>
+
+  <!-- Enlace al archivo JavaScript -->
+  <script src="js/script.js"></script>
+
+  <!-- Código JavaScript para el carrusel -->
+  <script>
+    let slideIndex = 0;
+
+    function showSlide(index) {
+      const slides = document.querySelectorAll('.slide');
+      
+      if (index >= slides.length) slideIndex = 0;
+      if (index < 0) slideIndex = slides.length - 1;
+      
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+      }
+      
+      slides[slideIndex].style.display = 'block';
+    }
+
+    function moveSlide(step) {
+      slideIndex += step;
+      showSlide(slideIndex);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      showSlide(slideIndex);
+      setInterval(() => {
+        moveSlide(1);  // Cambiar imagen cada 5 segundos
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>

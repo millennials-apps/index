@@ -1,0 +1,113 @@
+/* Estilo global */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121317;
+    color: #FFFFFF;
+    margin-top: 50px; /* Esto asegura que el contenido no se solape con el menú fijo */
+}
+
+/* Menú horizontal */
+nav {
+    background-color: #121317;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center; /* Asegura que los elementos dentro del menú estén centrados */
+    position: fixed; /* Esto hará que el menú se quede fijo en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%; /* Asegura que el menú ocupe todo el ancho */
+    z-index: 1000;
+    box-sizing: border-box; /* Asegura que el padding no se añada al ancho total */
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+nav a:hover {
+    background-color: #1B1A1F;
+    border-radius: 5px;
+}
+
+/* Contenedor principal */
+.content {
+    background-color: #121317;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 0px;
+    border-radius: 0px;
+}
+
+.content h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.content h2 {
+    margin: 10px 0 0;
+    font-size: 18px;
+}
+
+/* Imagen con esquinas redondeadas */
+.content img {
+    max-width: 100px;
+    border-radius: 10px;
+}
+
+/* Acerca de mi */
+.about-me-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1B1A1F;
+    padding: 20px;
+    color: white;
+}
+
+.text {
+    text-align: left;
+}
+
+.text h1 {
+    margin: 0;
+}
+
+.text h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Trabajo en */
+.container-alt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #121317;
+    padding: 20px;
+    color: white;
+}
+
+.text {
+    text-align: left;
+}
+
+.text h1 {
+    margin: 0;
+}
+
+.text h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.image img {
+    /*max-width: 100%;*/
+    height: auto;
+    max-height: 100px; /* Ajusta la altura de la imagen si es necesario */
+}
