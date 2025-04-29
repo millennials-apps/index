@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Millennial Apps</title>
+  <!-- Enlace a las fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Enlace al archivo CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="content">
+    <h1>FilmCat v2.0</h1>
+    <h2>Accede a una experiencia exclusiva de streaming, solo para un número limitado de usuarios y dispositivos.</h2>
+    <div class="buttons">
+      <button class="button-1" onclick="location.href='https://www.google.com';">Descargar</button>
+      <button class="button-2" onclick="document.getElementById('caracteristicas').scrollIntoView({ behavior: 'smooth', block: 'center' });">
+        Novedades
+      </button>
+    </div>
+  </div>
+
+  <!-- Carrusel de imágenes -->
+  <div class="slider">
+    <div class="slide">
+      <img src="assets/icons/FilmCat_01.jpg" alt="Imagen 1">
+    </div>
+    <div class="slide">
+      <img src="assets/icons/FilmCat_02.jpg" alt="Imagen 2">
+    </div>
+    <div class="slide">
+      <img src="assets/icons/FilmCat_03.jpg" alt="Imagen 3">
+    </div>
+	    <div class="slide">
+      <img src="assets/icons/FilmCat_04.jpg" alt="Imagen 4">
+    </div>
+    <div class="slide">
+      <img src="assets/icons/FilmCat_05.jpg" alt="Imagen 5">
+    </div>
+    
+    <!-- Controles de navegación -->
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+  <div id="caracteristicas" style="background-color: #1B1A1F; border-radius: 30px; padding: 20px; margin: 20px;">
+    <h2>Características principales</h2>
+    <ul style="color: #9E9E9E; padding-left: 20px;">
+      <li><b>Streaming de películas, series y TV en vivo.</b> Disfruta de tu contenido favorito en cualquier momento.</li>
+      <li><b>Descargas para ver sin conexión.</b> Guarda películas y series y míralas cuando quieras, sin necesidad de internet.</li>
+      <li><b>Acceso exclusivo.</b> Plazas limitadas para ofrecer una experiencia personalizada y sin saturaciones.</li>
+      <li><b>Compatible con dispositivos modernos.</b> Optimizado para Android 8.0 y versiones superiores para un mejor rendimiento.</li>
+      <li><b>Diseño rápido y ligero.</b> Una app pensada para ofrecer velocidad y simplicidad de uso.</li>
+    </ul>
+  </div>
+
+  <!-- Nuevo div con el texto centrado -->
+  <div style="background-color: #1B1A1F; padding: 5px; text-align: center;">
+    <p style="color: #fff;">Creado por <span style="color: #673AB7;">Millennials Apps</span></p>
+  </div>
+
+  <!-- Enlace al archivo JavaScript -->
+  <script src="js/script.js"></script>
+
+  <!-- Código JavaScript para el carrusel -->
+  <script>
+    let slideIndex = 0;
+
+    function showSlide(index) {
+      const slides = document.querySelectorAll('.slide');
+      
+      if (index >= slides.length) slideIndex = 0;
+      if (index < 0) slideIndex = slides.length - 1;
+      
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+      }
+      
+      slides[slideIndex].style.display = 'block';
+    }
+
+    function moveSlide(step) {
+      slideIndex += step;
+      showSlide(slideIndex);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      showSlide(slideIndex);
+      setInterval(() => {
+        moveSlide(1);  // Cambiar imagen cada 5 segundos
+      }, 5000);
+    });
+  </script>
+
+</body>
+  </html>
